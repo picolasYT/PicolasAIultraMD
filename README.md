@@ -77,7 +77,7 @@ apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
-git clone https://github.com/picolasYT/PicolaslAIUltraMD
+git clone https://github.com/picolasYT/PicolasAIultraMD.git
 ```
 
 ```bash
@@ -121,7 +121,7 @@ npm start
    ```
 ### **`📲 Instalación `AUTOMÁTICA` por termux`**
 
-`apt update -y && apt upgrade -y && pkg install -y git nodejs ffmpeg imagemagick yarn && git clone https://github.com/picolasYT/PicolaslAIUltraMD && cd PicolaslAIUltraMD && yarn install && npm install && npm update && npm start`
+`apt update -y && apt upgrade -y && pkg install -y git nodejs ffmpeg imagemagick yarn && git clone https://github.com/picolasYT/PicolasAIultraMD.git && cd PicolaslAIultraMD && yarn install && npm install && npm update && npm start`
 
 
 ---
