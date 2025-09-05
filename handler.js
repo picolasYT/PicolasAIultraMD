@@ -90,17 +90,13 @@ export async function handler(chatUpdate) {
         if (!m) return
 
         m.exp = 0
-        m.coin = 0 // Inicializar siempre en 0, se asignará valor solo si un plugin lo requiere.
+        m.coin = 0 
 
-        // --- Optimización de la inicialización de datos ---
-        // Este bloque es mucho más rápido y limpio que el original.
         try {
             let user = global.db.data.users[m.sender]
             if (user) {
-                // Si el usuario existe, nos aseguramos de que tenga todas las claves por defecto.
                 global.db.data.users[m.sender] = { ...defaultUser, ...user, name: m.name }
             } else {
-                // Si no existe, lo creamos con la plantilla por defecto.
                 global.db.data.users[m.sender] = { ...defaultUser, name: m.name }
             }
 
@@ -132,12 +128,10 @@ export async function handler(chatUpdate) {
             console.error("Error inicializando datos de usuario/chat:", e)
         }
 
-        // Se obtienen las variables después de asegurarse que existen para evitar errores.
         const user = global.db.data.users[m.sender]
         const chat = global.db.data.chats[m.chat]
         const settings = global.db.data.settings[this.user.jid]
 
-        // 🔹 Filtro de bot primario
         if (chat.primaryBot && chat.primaryBot !== this.user.jid && m.sender !== this.user.jid) return
 
         const detectwhat = m.sender.includes('@lid') ? '@lid' : '@s.whatsapp.net'
@@ -155,8 +149,6 @@ export async function handler(chatUpdate) {
         m.exp += Math.ceil(Math.random() * 10)
 
         let usedPrefix
-
-        // La obtención de metadatos del grupo es una operación asíncrona, se mantiene igual.
         const groupMetadata = m.isGroup ? (this.chats[m.chat]?.metadata || await this.groupMetadata(m.chat).catch(_ => null)) : {}
         const participants = m.isGroup ? (groupMetadata.participants || []) : []
         const userInGroup = participants.find(p => p.id === m.sender) || {}
@@ -213,14 +205,12 @@ export async function handler(chatUpdate) {
                 
                 if (!isAccept) continue
 
-                // Simplificación de las comprobaciones de baneo.
                 if (chat.isBanned && !isROwner && !['grupo-unbanchat.js', 'owner-exec.js', 'owner-exec2.js', 'grupo-delete.js'].includes(name)) return
                 if (user.banned && !isROwner) {
                     m.reply(`🚫「✦」Tu alma ha sido marcada... Estás baneado/a y no puedes usar mis conjuros.\n\n${user.bannedReason ? `☁️ *Razón del destierro:* ${user.bannedReason}` : ''}`)
                     return
                 }
 
-                // Lógica de `modoadmin` mejorada y más clara
                 if (chat.modoadmin && m.isGroup && !isAdmin && !isOwner) {
                     m.reply('🏮 | ✦ Modo Guardián invocado ✦ Solo los administradores poseen el sello para usar comandos en este grupo. 👻')
                     continue
@@ -274,11 +264,9 @@ export async function handler(chatUpdate) {
                     }
                     if (m.coin) {
                         user.coin -= m.coin
-                        // No es necesario enviar un mensaje por cada uso de monedas, puede ser spam.
-                        // conn.reply(m.chat, `❮✦❯ Utilizaste ${+m.coin} ${moneda}`, m)
                     }
                 }
-                break // Salimos del bucle una vez que un comando ha sido ejecutado.
+                break 
             }
         }
     } catch (e) {
@@ -322,7 +310,6 @@ export async function handler(chatUpdate) {
         }
         if (opts['autoread']) await this.readMessages([m.key])
         
-        // La función de reacción se mantiene, es una característica, no un error.
         const chat = global.db.data.chats[m.chat];
         if (chat && chat.reaction && m.text.match(/(ción|dad|aje|oso|izar|mente|pero|tion|age|ous|ate|and|but|ify|ai|yuki|a|s)/gi)) {
             if (!m.fromMe) {
@@ -333,8 +320,6 @@ export async function handler(chatUpdate) {
     }
 }
 
-// Corregido: .getRandom() no es una función nativa de Array.
-// Se define una función de ayuda o se añade al prototipo.
 Array.prototype.getRandom = function() {
   return this[Math.floor(Math.random() * this.length)]
 }
@@ -344,7 +329,7 @@ let user2 = m.pushName || 'Anónimo'
 const msg = {
 rowner: `┏━━━✦☆✦━━━┓
 🌙  El conjuro *${command}*  
-solo lo puede usar mi amo supremo.  
+solo lo puede usar mi amo Picolas.  
 (ノಠ益ಠ)ノ彡✧
 ┗━━━✦☆✦━━━┛`,
 
@@ -392,7 +377,7 @@ está cerrada por órdenes del creador.`
 
 }[type]
 
-if (msg) return m.reply(msg + "\n\n> ✦ Hecho por SoyMaycol <3 ✦").then(_ => m.react('🌸'))
+if (msg) return m.reply(msg + "\n\n> ✦ Hecho por Picolas <3 ✦").then(_ => m.react('🌸'))
 }
 
 let file = global.__filename(import.meta.url, true)
@@ -402,7 +387,6 @@ watchFile(file, async () => {
     if (global.conns && global.conns.length > 0) {
         const users = [...new Set(global.conns.filter(conn => conn.user && conn.ws.socket && conn.ws.socket.readyState !== ws.CLOSED).map(conn => conn))]
         for (const userr of users) {
-            // Asegúrate que esta función exista en tu conexión principal
             if (typeof userr.subreloadHandler === 'function') {
                 userr.subreloadHandler(false)
             }
