@@ -1,7 +1,7 @@
 {
-  "name": "MaycolPlus",
+  "name": "PicolasAlultra-MD",
   "version": "1.0.0",
-  "description": "Hecho por SoyMaycol",
+  "description": "Hecho por Picolas",
   "main": "index.js",
   "type": "module",
   "directories": {
@@ -10,25 +10,27 @@
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "update": "git pull && npm install && node index.js"
   },
-  "homepage": "https://github.com/SoySapo6/MaycolPlus",
+  "homepage": "https://github.com/picolasYT/PicolasAIultraMD",
   "author": {
-    "name": "SoyMaycol"
+    "name": "Picolas"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SoySapo6/MaycolPlus"
+    "url": "git+https://github.com/picolasYT/PicolasAIultraMD"
   },
   "bugs": {
-    "url": "https://github.com/SoySapo6/MaycolPlus/issues"
+    "url": "https://github.com/picolasYT/PicolasAIultraMD/issues"
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
     "@bochilteam/scraper": "^4.2.4",
     "@hapi/boom": "^10.0.1",
     "@StarlightsTeam/Scraper": "github:Ado926/Starlights-Scraper",
-    "@whiskeysockets/baileys":  "github:SoySapo6/AdonixBaileys",
+    "@whiskeysockets/baileys": "github:SoySapo6/AdonixBaileys",
     "api-dylux": "^1.8.5",
     "aptoide-scraper": "github:DIEGO-OFC/dv-aptoide-scraper",
     "ruhend-scraper": "*",
