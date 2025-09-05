@@ -14,7 +14,7 @@ global.redes = 'https://chat.whatsapp.com/KDI7NNovzdwJayx1gI1cue?mode=ems_copy_t
 global.botname = 'PicolasAlultra-MD'
 global.banner = 'https://files.catbox.moe/k05foi.jpg'
 global.packname = 'PicolasAlultra-MD'
-global.author = 'Hecho por Picolas <3'
+global.author = '> ✦ Hecho por Picolas & SoyMaycol <3 ✦'
 global.moneda = 'PicoCoins'
 global.libreria = 'Baileys'
 global.baileys = 'V 6.7.16'
