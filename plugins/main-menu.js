@@ -60,11 +60,11 @@ ${cmds.map(cmd => `│ ▪️ ${cmd}`).join('\n')}
 ╰─━━━━━━━━━━━━━━━━╯`
   }
 
-// Enviar menú con tu video personalizado
+// Enviar menú con tu nuevo video personalizado
 await conn.sendMessage(m.chat, {
-  video: { url: 'https://files.catbox.moe/45q7dz.mp4' },
+  video: { url: 'https://files.catbox.moe/dc7go2.mp4' },
   caption: menuText,
-  gifPlayback: true, // esto hace que se vea tipo GIF en WhatsApp
+  gifPlayback: true,
   contextInfo: {
     mentionedJid: [m.sender, userId],
     isForwarded: true,
