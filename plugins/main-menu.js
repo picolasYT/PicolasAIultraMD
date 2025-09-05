@@ -60,22 +60,23 @@ ${cmds.map(cmd => `│ ▪️ ${cmd}`).join('\n')}
 ╰─━━━━━━━━━━━━━━━━╯`
   }
 
-  // Enviar menú con video estilo gif
-  await conn.sendMessage(m.chat, {
-    video: { url: 'https://raw.githubusercontent.com/SoySapo6/tmp/refs/heads/main/Permanentes/descarga.mp4', gifPlayback: true },
-    caption: menuText,
-    gifPlayback: true,
-    contextInfo: {
-      mentionedJid: [m.sender, userId],
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363372883715167@newsletter',
-        newsletterName: 'PicolasAlultra • Actualizaciones',
-        serverMessageId: -1,
-      },
-      forwardingScore: 999
-    }
-  }, { quoted: m })
+// Enviar menú con tu video personalizado
+await conn.sendMessage(m.chat, {
+  video: { url: 'https://files.catbox.moe/45q7dz.mp4' },
+  caption: menuText,
+  gifPlayback: true, // esto hace que se vea tipo GIF en WhatsApp
+  contextInfo: {
+    mentionedJid: [m.sender, userId],
+    isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363372883715167@newsletter',
+      newsletterName: 'PicolasAlultra • Actualizaciones',
+      serverMessageId: -1,
+    },
+    forwardingScore: 999
+  }
+}, { quoted: m })
+
 }
 
 handler.help = ['menu']
