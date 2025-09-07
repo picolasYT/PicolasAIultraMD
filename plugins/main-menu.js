@@ -1,4 +1,4 @@
-// ♥ 𝙼𝚎𝚗𝚞 𝚍𝚎 𝚂𝚘𝚢𝙼𝚊𝚢𝚌𝚘𝚕 ♥
+// ♥ 𝙼𝚎𝚗𝚞 𝚍𝚎 ☆ {ℙ𝕚𝕔𝕠𝕝𝕒𝕤𝔸𝕀𝐮𝐥𝐭𝐫𝐚-𝐌𝐃} ☆ ♥
 // ᵁˢᵃ ᵉˢᵗᵉ ᶜᵒᵈⁱᵍᵒ ˢⁱᵉᵐᵖʳᵉ ᶜᵒⁿ ᶜʳᵉᵈⁱᵗᵒˢ
 
 let handler = async (m, { conn, args }) => {
@@ -40,14 +40,14 @@ let handler = async (m, { conn, args }) => {
   let emojiRandom = () => decoEmojis[Math.floor(Math.random() * decoEmojis.length)]
 
   let menuText = `
-▓▒­⡷ 𝐌𝐚𝐲𝐜𝐨𝐥ℙ𝕝𝕦𝕤 ⢾▒▓
+▓▒­⡷ 𝐏𝐢𝐜𝐨𝐥𝐚𝐬𝐀𝐥𝐮𝐥𝐭𝐫𝐚-𝐌𝐃 ⢾▒▓
 > *_${saludo}_*
 
-[🌙] Espiritu: @${userId.split('@')[0]}  
-[🏮] Tiempo mirandote: ${uptime}  
-[📜] Espiritus: ${totalreg}
+[🌙] Usuario: @${userId.split('@')[0]}  
+[🏮] Tiempo activo: ${uptime}  
+[📜] Registros: ${totalreg}
 
-Hecho por el *_SoyMaycol_* <3
+Hecho por el *_Picolas_* <3
 `.trim()
 
   for (let [tag, cmds] of Object.entries(categories)) {
@@ -60,22 +60,23 @@ ${cmds.map(cmd => `│ ▪️ ${cmd}`).join('\n')}
 ╰─━━━━━━━━━━━━━━━━╯`
   }
 
-  // Enviar menú con video estilo gif
-  await conn.sendMessage(m.chat, {
-    video: { url: 'https://raw.githubusercontent.com/SoySapo6/tmp/refs/heads/main/Permanentes/descarga.mp4', gifPlayback: true },
-    caption: menuText,
-    gifPlayback: true,
-    contextInfo: {
-      mentionedJid: [m.sender, userId],
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363372883715167@newsletter',
-        newsletterName: '𝐒𝐨𝐲𝐌𝐚𝐲𝐜𝐨𝐥 <𝟑 • Actualizaciones',
-        serverMessageId: -1,
-      },
-      forwardingScore: 999
-    }
-  }, { quoted: m })
+// Enviar menú con tu nuevo video personalizado
+await conn.sendMessage(m.chat, {
+  video: { url: 'https://files.catbox.moe/dc7go2.mp4' },
+  caption: menuText,
+  gifPlayback: true,
+  contextInfo: {
+    mentionedJid: [m.sender, userId],
+    isForwarded: true,
+    forwardedNewsletterMessageInfo: {
+      newsletterJid: '120363372883715167@newsletter',
+      newsletterName: 'PicolasAlultra • Actualizaciones',
+      serverMessageId: -1,
+    },
+    forwardingScore: 999
+  }
+}, { quoted: m })
+
 }
 
 handler.help = ['menu']
