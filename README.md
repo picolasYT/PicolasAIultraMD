@@ -168,9 +168,6 @@ npm start
 
 ---
 
-<img src="https://files.catbox.moe/0baywf.png" height="200px"></a> 
-
----
 # 🖥️ Akirax
 > Hosting seguro y rápido (Patricionado)
 
