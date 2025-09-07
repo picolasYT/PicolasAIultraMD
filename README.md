@@ -34,7 +34,7 @@
 
 ---
 
-### **`🌸 Click en la imagen para descargar termux 🌸`**
+### **`🤑 Click en la imagen para descargar termux 🤑`**
 <a
 href="https://www.mediafire.com/file/llugt4zgj7g3n3u/com.termux_1020.apk/file"><img src="https://files.catbox.moe/ayy4am.gif" height="125px"></a> 
 
@@ -46,7 +46,7 @@ href="https://www.mediafire.com/file/llugt4zgj7g3n3u/com.termux_1020.apk/file"><
 [![Ver en YouTube](https://img.youtube.com/vi/gTRfzTjyA4k/0.jpg)](https://youtu.be/gTRfzTjyA4k)
 
 Este video explica de forma rápida e ilustrativa cómo instalar el bot.  
-Gracias Neufra por el Tuto :)
+Video de Naufra. les contamos que naufra por un error de ellos no nos quisieron hacer el tutorial V:
 
 </details>
  
@@ -60,7 +60,11 @@ termux-setup-storage
 ```
 
 ```bash
-apt update && apt upgrade && pkg install -y git nodejs ffmpeg imagemagick yarn
+apt update && apt upgrade &&
+```
+
+```bash
+pkg install -y git nodejs ffmpeg imagemagick yarn
 ```
 
 ```bash
@@ -98,7 +102,7 @@ npm start
 ❒ Abre Termux y navega al directorio del bot:
    
    ```bash
-    cd MaycolAIUltraMD
+    cd PicolasAIultraMD
    ```
 
 ❒ Inicia el bot nuevamente:
@@ -139,7 +143,7 @@ npm start
 > Si deseas agregar tu número como owner del bot:
 
    ```bash
-    cd MaycolAIUltraMD && nano settings.js
+    cd PicolasAIultraMD && nano settings.js
    ```
 
 </details>
@@ -158,7 +162,7 @@ npm start
 <details>
 <summary><b>📞 Contacto</b></summary>
 
-* WhatsApp: [`Aquí`](https:/Wa.me/51921826291)
+* WhatsApp: [`Aquí`](https:/Wa.me/5492994587598)
 
 </details>
 
