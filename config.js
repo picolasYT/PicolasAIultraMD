@@ -25,13 +25,13 @@ global.jadi = 'PicolasBots'
 global.yukiJadibts = true
 
 global.namecanal = 'PicolasAlultra • Actualizaciones'
-global.idcanal = '0029VbBY6fkAzNbo3NqVBN33@newsletter'
-global.idcanal2 = '0029VbBY6fkAzNbo3NqVBN33@newsletter'
-global.canal = 'https://whatsapp.com/channel/0029VbBY6fkAzNbo3NqVBN33'
-global.canalreg = '0029VbBY6fkAzNbo3NqVBN33@newsletter'
+global.idcanal = '120363420352635909@newsletter'
+global.idcanal2 = '120363420352635909@newsletter'
+global.canal = 'https://whatsapp.com/channel/120363420352635909'
+global.canalreg = '120363420352635909@newsletter'
 
 global.ch = {
-  ch1: '0029VbBY6fkAzNbo3NqVBN33@newsletter'
+  ch1: '120363420352635909@newsletter'
 }
 
 global.multiplier = 69
